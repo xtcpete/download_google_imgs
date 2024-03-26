@@ -14,9 +14,10 @@ setuptools.setup(
     url="https://github.com/gurugaurav/bing_image_downloader",
     keywords=['google', 'images', 'scraping', 'image download', 'bulk image downloader',],
     packages=['google_image_downloader'],
+    requires = ["selenium", "tqdm", "beautifulsoup4"],
     classifiers=[
 	"Programming Language :: Python :: 3",
 	"License :: OSI Approved :: MIT License",
 	"Operating System :: OS Independent",
-        ]
+    ]
 )

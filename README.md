@@ -10,17 +10,18 @@ This package selenium webdriver to retrive links to high resolution images<br/>
 ### Disclaimer<br />
 
 This package helps you download images from Google Image.
+This package can download up to around 800-1000 images, depending the number of images return for a given query.
 Please do not violate any its terms. 
 
 ### Installation <br />
 ```sh
-pip install bing-image-downloader
+pip install google_image_downloader
 ```
 
 or 
 ```bash
-git clone https://github.com/gurugaurav/bing_image_downloader
-cd bing_image_downloader
+git clone https://github.com/xtcpete/google_image_downloader
+cd google_image_downloader
 pip install -r requirements.txt
 ```
 
