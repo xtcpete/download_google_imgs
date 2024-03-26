@@ -12,13 +12,13 @@ class ImageFormatWarning(UserWarning):
     pass
 
 class GoogleImageDownloader:
-    def __init__(self, query, output_name=None, num_images=1000, root_dir='images', add_ons=['4k']):
+    def __init__(self, query, output_name=None, num_images=10, root_dir='images', add_ons=['4k']):
         """_summary_
 
         Args:
             query (_type_): query to search images
             output_name (_type_, optional): folder name for saving images. Defaults to None.
-            num_images (int, optional): number of images to download. Defaults to 1000.
+            num_images (int, optional): number of images to download. Defaults to 10.
             root_dir (str, optional): root directory for saving images. Defaults to 'images'.
             add_ons (list, optional): additional string for query. Defaults to ['4k'].
         """
@@ -145,7 +145,7 @@ def download(query, get_urls=False, output_name=None, num_images=10, root_dir='g
             query (_type_): query to search images
             get_urls (bool, optional): if set to ture, it will only return links to images; images will not be downloaded. Defaults to False.
             output_name (_type_, optional): folder name for saving images. Defaults to query string.
-            num_images (int, optional): number of images to download. Defaults to 1000.
+            num_images (int, optional): number of images to download. Defaults to 10.
             root_dir (str, optional): root directory for saving images. Defaults to 'images'.
             add_ons (list, optional): additional string for query. Defaults to ['4k'].
             verbose (bool, optional): if set to True, it will print progress. Defaults to True.
