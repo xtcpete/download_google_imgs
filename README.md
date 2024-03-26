@@ -4,7 +4,7 @@
 ## Google Image Downloader
 <hr>
 
-Python library to download images form Google Images with query.
+Simple Python package to download images form Google Images with query.
 This package selenium webdriver to retrive links to high resolution images<br/>
 
 ### Disclaimer<br />
