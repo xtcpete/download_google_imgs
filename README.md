@@ -17,7 +17,7 @@ pip install download_google_imgs
 
 or 
 ```bash
-git clone https://github.com/xtcpete/download-google-imgs
+git clone https://github.com/xtcpete/download_google_imgs
 cd download_google_imgs
 pip install -r requirements.txt
 ```
