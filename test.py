@@ -1,5 +1,5 @@
 import sys
-from google_image_downloader import downloader
+from download_google_imgs import downloader
 
 query=sys.argv[1]
     
