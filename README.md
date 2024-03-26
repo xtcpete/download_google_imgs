@@ -17,7 +17,7 @@ pip install download_google_imgs
 
 or 
 ```bash
-git clone https://github.com/xtcpete/download_google_imgs
+git clone https://github.com/xtcpete/download-google-imgs
 cd download_google_imgs
 pip install -r requirements.txt
 ```
@@ -39,7 +39,7 @@ downloader.download(query, get_urls=False, output_name=None, num_images=10, root
 
 
 ### PyPi <br />
-https://pypi.org/project/download_google_imgs/
+https://pypi.org/project/download-google-imgs/
 
 
 </br>
