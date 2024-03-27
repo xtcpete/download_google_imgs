@@ -44,7 +44,7 @@ class GoogleImageDownloader:
         header={'User-Agent':"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.134 Safari/537.36"}
     
         try:
-            response = req.urlopen(req.Request(img, headers=header))
+            response = req.urlopen(req.Request(img, headers=header), timeout=10)
             raw_img = response.read()
             type = response.headers['Content-Type'].split('/')[1].lower()
             if type in ['jpeg', 'jpg', 'png']:
@@ -91,13 +91,13 @@ class GoogleImageDownloader:
             os.mkdir(data_path)
     
         
-        for i in range(int(self.num_images / 20)):
+        for i in range(self.num_images):
             try:
                 show_more = driver.find_elements(By.XPATH, '//input[@value="Show more results"]')
                 show_more[0].click()
             except:
                 driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-             
+                
         elements = driver.find_elements(By.XPATH, '//a[.//div[img] and not(@href)]')
         if elements == []:
             elements = driver.find_elements(By.XPATH, '//a[contains(@href, "imgres")]')
