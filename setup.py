@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="download_google_imgs",
-    version="1.0.1",
+    version="1.0.4",
     author="Gonglin Chen",
     author_email="xtcpetecgl@gmail.com",
     description="Python library to download images form Google Images with query.",

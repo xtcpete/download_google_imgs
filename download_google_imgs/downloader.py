@@ -42,12 +42,11 @@ class GoogleImageDownloader:
     
     def download_img(self, img, data_path, img_id, verbose=True):
         header={'User-Agent':"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.134 Safari/537.36"}
-        
-        response = req.urlopen(req.Request(img, headers=header))
-        raw_img = response.read()
-        type = response.headers['Content-Type'].split('/')[1].lower()
     
         try:
+            response = req.urlopen(req.Request(img, headers=header))
+            raw_img = response.read()
+            type = response.headers['Content-Type'].split('/')[1].lower()
             if type in ['jpeg', 'jpg', 'png']:
                 with open(os.path.join(data_path, "{:08d}".format(img_id)+f'.{type}'), 'wb') as f:
                     f.write(raw_img)
@@ -57,6 +56,8 @@ class GoogleImageDownloader:
                 return False
             return True
         except Exception as e:
+            if verbose:
+                print(f"Failed to download image {img_id} due to {e}. Skipping...")
             return False
         
     def download(self, get_urls=False, verbose=True):
@@ -90,7 +91,7 @@ class GoogleImageDownloader:
             os.mkdir(data_path)
     
         
-        for i in range(self.num_images // 10):
+        for i in range(int(self.num_images / 20)):
             try:
                 show_more = driver.find_elements(By.XPATH, '//input[@value="Show more results"]')
                 show_more[0].click()
